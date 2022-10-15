@@ -1,4 +1,12 @@
-import { initializeApp } from "firebase/app";
+import { getApp, getApps, initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import * as admin from 'firebase-admin'
+
+// Secure a connection to FIREBASE from the backend
+const serviceAccount = require('./permission.json');
+const adminApp = !admin.apps.length ? admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount)
+}) : admin.app();
 
 const firebaseConfig = {
     apiKey: "AIzaSyChUWv97J-VEgIx_6_MislCaskAGrlN89Q",
@@ -10,4 +18,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+const db = getFirestore();
+
+export { db, adminApp };
