@@ -26,7 +26,8 @@ export default async (req, res) => {
     if (req.method === 'POST') {
         const requestBuffer = await buffer(req);
         const payload = requestBuffer.toString();
-        const sig = req.headers['stripe-signature'];
+        const sig = req.headers["stripe-signature"];
+        console.log("req.headers['stripe-signature'] :",req.headers['stripe-signature']);
         
         let event;
 
