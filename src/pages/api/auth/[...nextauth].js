@@ -15,5 +15,10 @@ export const authOptions = {
     // ...add more providers here
   ],
   secret: process.env.NEXTAUTH_SECRET,
+  pages: {
+    // This is folder structure that Next.js recommends and also keep signin js file name in small case.
+    // https://next-auth.js.org/configuration/pages
+    signIn: "/auth/signin"
+  },
 }
 export default NextAuth(authOptions)
