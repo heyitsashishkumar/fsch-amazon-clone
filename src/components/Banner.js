@@ -7,13 +7,13 @@ const Banner = () => {
             <div className='absolute w-full h-32 bg-gradient-to-t from-gray-100 to-transparent bottom-0 z-20' />
             <Carousel autoPlay infiniteLoop showStatus={false} showIndicator={false} showThumbs={false} interval={3000}>
                 <div>
-                    <img loading='lazy' src='https://links.papareact.com/gi1' alt='' />
+                    <img loading='lazy' src='https://links.papareact.com/gi1' alt='Banner Image' />
                 </div>
                 <div>
-                    <img loading='lazy' src='https://links.papareact.com/6ff' alt='' />
+                    <img loading='lazy' src='https://links.papareact.com/6ff' alt='Banner Image' />
                 </div>
                 <div>
-                    <img loading='lazy' src='https://links.papareact.com/7ma' alt='' />
+                    <img loading='lazy' src='https://links.papareact.com/7ma' alt='Banner Image' />
                 </div>
             </Carousel>
         </div>

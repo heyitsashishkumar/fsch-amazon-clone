@@ -2,7 +2,6 @@ import Image from 'next/image'
 import { Bars3Icon, MagnifyingGlassIcon, ShoppingCartIcon } from "@heroicons/react/24/outline";
 import { useSession, signIn, signOut } from "next-auth/react"
 import { useRouter } from 'next/router'
-import { route } from 'next/dist/next-server/server/router';
 import { useSelector } from 'react-redux';
 import { selectItems } from '../slices/basketSlice';
 
@@ -18,15 +17,17 @@ const Header = () => {
             {/* Top Nav */}
             <div className='flex items-center bg-amazon_blue p-1 flex-grow py-2'>
                 {/* Company logo */}
-                <div className='mt-2 flex items-center flex-grow sm:flex-grow-0'>
-                    <Image onClick={() => router.push('/')} src="https://links.papareact.com/f90" objectFit='contain' className='cursor-pointer' width={150} height={40} />
+                <div className='mt-2 flex items-center flex-grow sm:flex-grow-0 ml-4'>
+                    <Image alt='Amazon Image' onClick={() => router.push('/')} src="https://links.papareact.com/f90" className='cursor-pointer object-contain' width={120} height={10} />
                 </div>
 
                 {/* Search */}
-                <div className='hidden sm:flex bg-yellow-400 hover:bg-yellow-500 h-10 rounded-md items-center flex-grow cursor-pointer'>
+                <div className='hidden sm:flex mx-12 bg-yellow-400 hover:bg-yellow-500 h-10 rounded-md items-center flex-grow cursor-pointer'>
                     <input type="text" className='p-2 h-full w-6 flex-grow flex-shrink rounded-l-md' />
                     <MagnifyingGlassIcon className='h-12 p-4' />
                 </div>
+
+                {/* Signin/Profile, Orders, Basket */}
                 <div className='text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap'>
                     <div onClick={!session ? signIn : signOut} className='link'>
                         <p>{session ? `Hello, ${session?.user?.name}` : 'Sign In'}</p>

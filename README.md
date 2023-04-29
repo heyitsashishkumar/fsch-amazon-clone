@@ -1,8 +1,6 @@
-Deployed at: https://amazon-ak-build.vercel.app/
 
-https://amazon-ak-build-6k9m6kqs6-ashish1553.vercel.app
+# Install dependencies
+yarn add @heroicons/react @reduxjs/toolkit @stripe/stripe-js @tailwindcss/line-clamp axios firebase firebase-admin micro moment next next-auth react react-currency-formatter react-dom react-redux react-responsive-carousel stripe
 
-
-
-Docs:
-https://stripe.com/docs/payments/accept-a-payment
+# Install dev dependencies
+yarn add -D autoprefixer postcss tailwindcss

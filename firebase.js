@@ -8,14 +8,15 @@ const adminApp = !admin.apps.length ? admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
 }) : admin.app();
 
+// Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyChUWv97J-VEgIx_6_MislCaskAGrlN89Q",
-    authDomain: "ak-verse.firebaseapp.com",
-    projectId: "ak-verse",
-    storageBucket: "ak-verse.appspot.com",
-    messagingSenderId: "321920042812",
-    appId: "1:321920042812:web:9f8be0da5bfefb42864039"
-};
+    apiKey: "AIzaSyAYtIq-UtNXFYQTtu7GA6CkbI16SrR9S18",
+    authDomain: "fsch--clone.firebaseapp.com",
+    projectId: "fsch--clone",
+    storageBucket: "fsch--clone.appspot.com",
+    messagingSenderId: "240473584487",
+    appId: "1:240473584487:web:87c667f9cef25675ef75c2"
+  };
 
 // Initialize Firebase
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
